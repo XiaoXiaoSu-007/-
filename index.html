@@ -1,32 +1,275 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 <head>
-<meta charset="utf-8">
-<title>临时停车</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>临时停车联系车主</title>
+
 <style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
 body{
-    text-align:center;
-    margin-top:120px;
-    font-size:28px;
+
+font-family:"PingFang SC","Microsoft YaHei",sans-serif;
+
+background:linear-gradient(135deg,#e0f7fa,#fce4ec);
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+min-height:100vh;
+
 }
-button{
-    font-size:30px;
-    padding:20px 40px;
+
+/* 卡片 */
+
+.card{
+
+width:92%;
+max-width:420px;
+
+background:white;
+
+border-radius:22px;
+
+overflow:hidden;
+
+box-shadow:0 20px 40px rgba(0,0,0,0.15);
+
+animation:fadeIn 0.8s ease;
+
 }
+
+/* 车图片 */
+
+.car-img{
+
+width:100%;
+
+height:230px;
+
+object-fit:cover;
+
+}
+
+/* 内容 */
+
+.content{
+
+padding:30px;
+
+text-align:center;
+
+}
+
+/* 标题 */
+
+.title{
+
+font-size:30px;
+
+margin-bottom:10px;
+
+color:#333;
+
+}
+
+/* 描述 */
+
+.desc{
+
+font-size:18px;
+
+color:#666;
+
+margin-bottom:25px;
+
+}
+
+/* 车牌 */
+
+.plate{
+
+font-size:22px;
+
+background:#f1f1f1;
+
+display:inline-block;
+
+padding:8px 16px;
+
+border-radius:10px;
+
+margin-bottom:25px;
+
+}
+
+/* 按钮 */
+
+.btn{
+
+display:block;
+
+text-decoration:none;
+
+margin:14px auto;
+
+padding:16px;
+
+width:85%;
+
+border-radius:14px;
+
+font-size:20px;
+
+color:white;
+
+transition:0.25s;
+
+}
+
+/* 拨号按钮 */
+
+.call{
+
+background:linear-gradient(135deg,#4CAF50,#66bb6a);
+
+}
+
+/* 短信按钮 */
+
+.sms{
+
+background:linear-gradient(135deg,#2196F3,#42a5f5);
+
+}
+
+/* 按钮动画 */
+
+.btn:hover{
+
+transform:scale(1.05);
+
+box-shadow:0 10px 20px rgba(0,0,0,0.2);
+
+}
+
+/* 底部 */
+
+.footer{
+
+margin-top:20px;
+
+font-size:14px;
+
+color:#999;
+
+}
+
+/* 动画 */
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* 夜间模式 */
+
+@media (prefers-color-scheme: dark){
+
+body{
+
+background:linear-gradient(135deg,#1f1f1f,#2c2c2c);
+
+}
+
+.card{
+
+background:#333;
+
+color:white;
+
+}
+
+.desc{
+
+color:#ccc;
+
+}
+
+.plate{
+
+background:#444;
+
+}
+
+.footer{
+
+color:#aaa;
+
+}
+
+}
+
 </style>
+
 </head>
 
 <body>
 
-🚗 临时停车<br><br>
+<div class="card">
 
-<button onclick="call()">📞 联系车主</button>
+<img src="car.jpg" class="car-img">
 
-<script>
-function call(){
-    location.href="tel:13148226551";
-}
-</script>
+<div class="content">
+
+<div class="title">🚗 临时停车</div>
+
+<div class="desc">
+如需挪车请联系车主<br>
+感谢您的理解 🙏
+</div>
+
+<div class="plate">
+车牌：豫AFM8873
+</div>
+
+<a class="btn call" href="tel:13148226551">
+📞 一键联系车主
+</a>
+
+<a class="btn sms" href="sms:13148226551">
+💬 发送短信
+</a>
+
+<div class="footer">
+扫码即可联系车主
+</div>
+
+</div>
+
+</div>
 
 </body>
 </html>
